@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MainTest.Mapper.TestMapper">
+  <select id="findAll" resultType="MainTest.Entity.User">
+    select * from user
+  </select>
+  <select id="findUserById" resultType="MainTest.Entity.User">
+    select * from user where id=#{id}
+  </select>
+
+  <!-- create user-->
+  <insert id="addUser" parameterType="MainTest.Entity.User">
+    insert into user(name,age) values(#{name},#{age})
+  </insert>
+
+</mapper>
